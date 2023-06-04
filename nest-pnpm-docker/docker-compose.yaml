@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "80:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: F0rjb
+      MONGO_INITDB_ROOT_PASSWORD: hey20122
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "81:8081"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: F0rjb
+      MONGO_INITDB_ROOT_PASSWORD: hey20122
+      ME_CONFIG_MONGODB_URL: mongodb://F0rjb:hey20122@mongo:27017/
+  
+
+  
